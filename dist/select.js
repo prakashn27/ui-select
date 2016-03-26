@@ -280,22 +280,6 @@ uis.controller('uiSelectCtrl',
 	if (ctrl.searchInput.length !== 1) {
 		throw uiSelectMinErr('searchInput', "Expected 1 input.ui-select-search but got '{0}'.", ctrl.searchInput.length);
 	}
-	ctrl.headerClick = function(g) {
-		console.log("header is clicked:", g);
-		var items = g.items;
-		console.log('ctrld in header click', ctrl);
-		for(var i = 0; i < items.length; i++) {
-			ctrl.select(items[i], false, ' ');
-			console.log("for item", items[i]);
-		}
-	};
-	ctrl.headerHover = function(g) {	//TODO: hovering over for the list
-			console.log("header hover:", g);
-			// var items = g.items;
-			// for(var i = 0; i < items.length; i++) {
-			// 	ctrl.setActiveItem(items[i]);
-			// }
-	};
 	
 	ctrl.isEmpty = function() {
 		return angular.isUndefined(ctrl.selected) || ctrl.selected === null || ctrl.selected === '';
